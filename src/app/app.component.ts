@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductService } from './product.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'practical_test';
+ constructor(private service:ProductService){
+
+ }
+  quantity=0
+  ngDoCheck(){
+   this.quantity =this.service.count
+  }
 }
